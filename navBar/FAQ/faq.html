@@ -4,6 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQs</title>
+    <style>
+        .collapsible {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: background 0.2s;
+        }
+
+        .collapsible::after {
+            content: '\002b';
+            float: right;
+            transform: scale(1.5);
+        }
+        
+        .collapsible--active + .content { display: block; background-color: white;}
+        .collapsible--active { background-color: #444; color: #eee;}
+        .collapsible--active::after { content: '\2212'}
+
+        .content {
+            /*
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.2s;
+            */
+            
+            padding: 0 15px;
+            background: #eee;
+            display: none;
+            overflow: auto;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -114,95 +151,95 @@
     <div class="questions">
         <button type="button" class="collapsible">What are your COVID-19 protocols?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">What airport do I fly into?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">Is it possible to work while I am participating in the program?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">When do the programs start?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">Will I regain the weight I lose while at camp once I go home?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">Will I be working out in a tiny "hotel" gym?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">Where does the retreat take place?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">How do I know if Unite is the right fit for me?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">What is the mailing address if I want to receive mail while I am at camp?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">Do I need to rent a car while I am in town?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">How will I do my laundry?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">Are pets welcome?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">What's your cancellation policy?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">Is the retreat tax-detuctible?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">Is Unite Fitness Retreat covered by my health insurance?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">Do you need a deposit?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">What payment options are available?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">What does a typical day look like?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">Why are your rates so low compared to other camps?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">Who are the typical clients at Unite?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">I've never worked out before, what if I can't keep up?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">Do I need to see my doctor before starting this program?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
         <button type="button" class="collapsible">What should I pack?</button>
         <div class="content">
-            <p></p>
+            <p>Here is the answer to this question</p>
         </div>
     </div>
     <div class="call-to-action-3">
@@ -246,6 +283,20 @@
             <h6>©  2020 DETOX OASIS | All rights reserved | +1 812-295-6235</h6>
         </div>
     </footer>
+    <script>
+        document.querySelectorAll('.collapsible').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                button.classList.toggle('collapsible--active');
+
+                if (button.classList.contains('collapsible--active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = 0; 
+                }
+            });
+        })
+    </script>
 </body>
 </html>    
 </body>
