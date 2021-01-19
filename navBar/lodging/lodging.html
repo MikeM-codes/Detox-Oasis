@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lodging</title>
 </head>
+<style>
+    .main-lodge-carousel {
+        width: 60%;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .main-lodge-slides {
+        display: flex;
+    }
+    
+</style>
 <body>
     <header>
         <div class="main-title">
@@ -138,22 +150,25 @@
             <li>Commercial Kitchen</li>
         </ul>
         <div class="main-lodge-carousel">
-            <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4969-HDR-25.jpg" alt="">
-            <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4972-HDR-26.jpg" alt="">
-            <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4930-HDR-22.jpg" alt="">
-            <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4933-HDR-23.jpg" alt="">
-            <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4939-HDR-24.jpg" alt="">
-            <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4873-HDR-11.jpg" alt="">
-            <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4903-HDR-21.jpg" alt="">
-            <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4912-HDR-17.jpg" alt="">
-            <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4918-HDR-19.jpg" alt="">
-            <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4921-HDR-20.jpg" alt="">
-            <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4927-HDR-21.jpg" alt="">
-            <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4984-HDR-27.jpg" alt="">
-            <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4990-HDR-28.jpg" alt="">
-            <button class="carousel-button carousel-display-left" onclick="PlusDivs(-1)">&#10094;</button>
-            <button class="carousel-button carousel-display-right" onclick="PlusDivs(+1)">&#10095;</button>
+            <div class="main-lodge-slides">
+                <img width="100%" height="500px" id="lastClone" src="../../Pictures/Main Lodge Pictures/2H9A4990-HDR-28.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Main Lodge Pictures/2H9A4969-HDR-25.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Main Lodge Pictures/2H9A4972-HDR-26.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Main Lodge Pictures/2H9A4930-HDR-22.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Main Lodge Pictures/2H9A4933-HDR-23.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Main Lodge Pictures/2H9A4939-HDR-24.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Main Lodge Pictures/2H9A4873-HDR-11.jpg" alt="">            
+                <img width="100%" height="500px" src="../../Pictures/Main Lodge Pictures/2H9A4912-HDR-17.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Main Lodge Pictures/2H9A4918-HDR-19.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Main Lodge Pictures/2H9A4921-HDR-20.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Main Lodge Pictures/2H9A4927-HDR-21.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Main Lodge Pictures/2H9A4984-HDR-27.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Main Lodge Pictures/2H9A4990-HDR-28.jpg" alt="">
+                <img width="100%" height="500px" id="firstClone" src="../../Pictures/Main Lodge Pictures/2H9A4969-HDR-25.jpg" alt="">
+            </div>
         </div>
+        <button class="prevButton">&#10094;</button>
+        <button class="nextButton">&#10095;</button>
     </div>
     <div class="grand-lodge">
         <h1>Grand Lodge</h1>
@@ -224,12 +239,42 @@
         </div>
     </div>
     <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
+        const mainLodgeSlides = document.querySelector('.main-lodge-slides');
+        const mainLodgeImages = document.querySelectorAll('.main-lodge-slides img');
 
-        function PlusDivs(n) {
-            showDivs(slideIndex += n);
-        }
+        const prevButton = document.querySelector('.prevButton');
+        const nextButton = document.querySelector('.nextButton');
+
+        let counter = 1;
+        const size = mainLodgeImages[0].clientWidth;
+        mainLodgeSlides.style.transform = 'translateX(' + (-size * counter ) + 'px)';
+
+        nextButton.addEventListener('click', () => {
+            if (counter >= mainLodgeImages.length - 1) return;
+            mainLodgeSlides.style.transition = "transform 0.4s ease-in-out";
+            counter++;
+            mainLodgeSlides.style.transform = 'translateX(' + (-size * counter ) + 'px)';
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (counter <= 0) return;
+            mainLodgeSlides.style.transition = "transform 0.4s ease-in-out";
+            counter--;
+            mainLodgeSlides.style.transform = 'translateX(' + (-size * counter ) + 'px)';
+        });
+
+        mainLodgeSlides.addEventListener('transitionend', () => {
+            if (mainLodgeImages[counter].id === 'lastClone') {
+                mainLodgeSlides.style.transition = "none";
+                counter = mainLodgeImages.length - 2;
+                mainLodgeSlides.style.transition = "transform 0.4s ease-in-out";
+            }
+            if (mainLodgeImages[counter].id === 'firstClone') {
+                mainLodgeSlides.style.transition = "none";
+                counter = mainLodgeImages.length - counter;
+                mainLodgeSlides.style.transition = "transform 0.4s ease-in-out";
+            }
+        });
     </script>
 </body>
 </html>
