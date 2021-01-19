@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blanche House</title>
+    <title>Lodging</title>
 </head>
 <body>
     <header>
@@ -36,9 +36,6 @@
                                    <a href="../programs/peakperformance.html">Peak Performance Fitness Retreat</a>
                                </li>
                                <li>
-                                   <!-- #weightloss -->
-                                   <a href="../programs/weightloss.html">Medically Supervised Weightloss</a>
-                               </li><li>
                                    <!-- #warfighter -->
                                    <a href="../programs/warfighter.html">Military</a>
                                </li>
@@ -52,9 +49,9 @@
                             </ul>
                         </li>
                      </div>
-                     <div id="accomodations">
-                        <li id="accomodations-list-item">
-                            <a href="./lodging.html">Accomodations</a>
+                     <div id="lodging">
+                        <li id="lodging-list-item">
+                            <a href="./lodging.html">Lodging</a>
                             <ul>
                                 <li>
                                     <a href="./grandlodge.html">Grand Lodge</a>
@@ -154,8 +151,8 @@
             <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4927-HDR-21.jpg" alt="">
             <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4984-HDR-27.jpg" alt="">
             <img width="306px" height="175px" class="main-lodge-slides" src="../../Pictures/Main Lodge Pictures/2H9A4990-HDR-28.jpg" alt="">
-            <button></button>
-            <button></button>
+            <button class="carousel-button carousel-display-left" onclick="PlusDivs(-1)">&#10094;</button>
+            <button class="carousel-button carousel-display-right" onclick="PlusDivs(+1)">&#10095;</button>
         </div>
     </div>
     <div class="grand-lodge">
@@ -198,8 +195,8 @@
             <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-28.jpg" alt="">
             <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-34.jpg" alt="">
             <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-37.jpg" alt="">
-            <button></button>
-            <button></button>
+            <button class="carousel-button carousel-display-left" onclick="PlusDivs(-1)">&#10094;</button>
+            <button class="carousel-button carousel-display-right" onclick="PlusDivs(+1)">&#10095;</button>
         </div>
     </div>
     <div class="blanche-house">
@@ -222,9 +219,17 @@
             <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
             <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
             <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
-            <button></button>
-            <button></button>
+            <button class="carousel-button carousel-display-left" onclick="PlusDivs(-1)">&#10094;</button>
+            <button class="carousel-button carousel-display-right" onclick="PlusDivs(+1)">&#10095;</button>
         </div>
     </div>
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function PlusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+    </script>
 </body>
 </html>
