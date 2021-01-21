@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- <script src="https://kit.fontawesome.com/ae2e37ce79.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/fcaa3f7946.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Lodging</title>
 </head>
 <style>
@@ -15,6 +19,36 @@
     .main-lodge-slides {
         display: flex;
     } 
+
+    .grand-lodge-carousel {
+        width: 60%;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .grand-lodge-slides {
+        display: flex;
+    }
+
+    .blanche-house-carousel {
+        width: 60%;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .blanche-house-slides {
+        display: flex;
+    } 
+
+    .microcabin-carousel {
+        width: 60%;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .microcabin-slides {
+        display: flex;
+    }
 </style>
 <body>
     <header>
@@ -149,6 +183,8 @@
             <li>Commercial Kitchen</li>
         </ul>
         <div class="main-lodge-carousel">
+            <i class="fal fa-angle-left" id="mainLodgePrevButton" ></i>
+            <i class="fal fa-angle-right" id="mainLodgeNextButton"></i>
             <div class="main-lodge-slides">
                 <img width="100%" height="500px" id="lastClone" src="../../Pictures/Main Lodge Pictures/2H9A4990-HDR-28.jpg" alt="">
                 <img width="100%" height="500px" src="../../Pictures/Main Lodge Pictures/2H9A4969-HDR-25.jpg" alt="">
@@ -183,35 +219,39 @@
             <li>Gym and Recreation Room</li>
         </ul>
         <div class="grand-lodge-carousel">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-41.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-39.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/1.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/3.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/4.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/5.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/8.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/11.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/9.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/14.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/12.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/13.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/15.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/16.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/17.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/18.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/19.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/29.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-22.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-17.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-23.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-25.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-26.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-28.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-34.jpg" alt="">
-            <img width="306px" height="175px" class="grand-lodge-slides" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-37.jpg" alt="">
-            <button class="carousel-button carousel-display-left" onclick="PlusDivs(-1)">&#10094;</button>
-            <button class="carousel-button carousel-display-right" onclick="PlusDivs(+1)">&#10095;</button>
+            <div class="grand-lodge-slides">
+                <img width="100%" height="500px" id="grandLastClone" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-37.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-41.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-39.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/1.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/3.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/4.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/5.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/8.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/11.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/9.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/14.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/12.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/13.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/15.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/16.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/17.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/18.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/19.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/29.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-22.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-17.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-23.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-25.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-26.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-28.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-34.jpg" alt="">
+                <img width="100%" height="500px" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-37.jpg" alt="">
+                <img width="100%" height="500px" id="grandFirstClone" src="../../Pictures/Grand Lodge/GrandLodgePicturesVinettes-41.jpg" alt="">
+            </div>
         </div>
+        <button class="grandLodgePrevButton">&#10094;</button>
+        <button class="grandLodgeNextButton">&#10095;</button>
     </div>
     <div class="blanche-house">
         <h1>Blanche House</h1>
@@ -220,23 +260,52 @@
             <li></li>
         </ul>
         <div class="blanche-house-carousel">
-            <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
-            <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
-            <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
-            <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
-            <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
-            <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
-            <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
-            <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
-            <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
-            <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
-            <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
-            <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
-            <img width="306px" height="175px" class="blanche-house-slides" src="" alt="">
-            <button class="carousel-button carousel-display-left" onclick="PlusDivs(-1)">&#10094;</button>
-            <button class="carousel-button carousel-display-right" onclick="PlusDivs(+1)">&#10095;</button>
+            <div class="blanche-house-slides">
+                <img width="100%" height="500px" id="blancheLastClone" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" id="blancheFirstClone" src="" alt="">
+            </div>
         </div>
+        <button class="blanchePrevButton">&#10094;</button>
+        <button class="blancheNextButton">&#10095;</button>
     </div>
+    <div class="microcabin">
+        <h1>Microcabin</h1>
+        <h2>Features</h2>
+        <ul>
+            <li></li>
+        </ul>
+        <div class="microcabin-carousel">
+            <div class="microcabin-slides">
+                <img width="100%" height="500px" id="microLastClone" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" src="" alt="">
+                <img width="100%" height="500px" id="microFirstClone" src="" alt="">
+            </div>
+        </div>
+        <button class="microcabinPrevButton">&#10094;</button>
+        <button class="microcabinNextButton">&#10095;</button>
+    </div>
+
     <script src="./lodging-carousel.js"></script>
 </body>
 </html>
