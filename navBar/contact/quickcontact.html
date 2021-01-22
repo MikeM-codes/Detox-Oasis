@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+
+    <style>
+        .forms{
+            background-color:#54805850;
+            position: bottom, center;
+            width: 327px;
+            height: 426px;
+            left: 24px;
+            top: 182px;
+
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -108,8 +120,69 @@
             </nav>
         </div>
     </header>
-    <h1>Quick Contact</h1>
-</body>
-</html>    
+    <div class="contact-us">
+        <h1 class="title">Contact Us</h1>
+        <h2 class="subtitle">We'll get back to you ASAP!</h2>
+
+        <div class="forms">
+
+            <form action="index.php">
+                <input type="text" name="your-name" placeholder="Name*" minlength="2" maxlength="30">
+            </form>
+
+            <form action="index.php">
+                <input type="text" name="your-phone" placeholder="Phone*" minlength="2" maxlength="20">
+            </form>
+
+            <form action="index.php">
+                <input type="text" name="your-email" placeholder="Email*" minlength="2" maxlength="20">
+            </form>
+
+            <!--big box for message -->
+            
+            <form action="index.php">
+                <input type="text" name="your-message" placeholder="Ask Us A Question*" style="height:200px; width:200px">
+            </form>
+
+            <input type="button" class="button" value="submit">
+
+        </div>
+
+        <p>We never share your email with anyone</p>
+    </div>
+
+    <footer>
+        <div class="location">
+            <div class="main-lodge">
+                <h5>Detox Oasis</h5>
+                <h5>-Main Lodge</h5>
+                <h5>8785 Ridge Rd.</h5>
+                <h5>Shoals, IN 47581</h5>
+                <h5>+1 812-295-6235</h5>
+                <h5><a target="_blank" href="https://www.google.com/maps/place/Elk+Ridge+Ranch/@38.560263,-86.7634537,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xe9552a62966fb740!8m2!3d38.560263!4d-86.761265">Get Directions</a></h5>
+            </div>
+            <div class="grand-lodge">
+                <h5>Detox Oasis</h5>
+                <h5>-Grand Lodge</h5>
+                <h5>9478 Lodge Rd.</h5>
+                <h5>Shoals, IN 47581</h5>
+                <h5>+1 812-709-0827</h5>
+                <h5><a target="_blank" href="https://www.google.com/maps/place/ELK+RIDGE/@38.5633251,-86.7495384,17z/data=!4m12!1m6!3m5!1s0x0:0xe9552a62966fb740!2sElk+Ridge+Ranch!8m2!3d38.560263!4d-86.761265!3m4!1s0x886e832a408aa973:0x8e08c5884e25754b!8m2!3d38.5644591!4d-86.7453318">Get Directions</a></h5>
+            </div>
+        </div>
+        <div class="featured-links">
+            <a href="">FAQ</a>
+            <a href="">Programs</a>
+            <a href="">Blog</a>
+            <a href="">Contact Us</a>
+            <a href="">Lodging</a>
+            <a href="">About Us</a>
+            <a href="">Location</a>
+            <a href="">Privacy Policy</a>
+        </div>
+        <div class="copyright">
+            <h6>©  2020 DETOX OASIS | All rights reserved | +1 812-295-6235</h6>
+        </div>
+    </footer>   
 </body>
 </html>
